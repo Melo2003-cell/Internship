@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 20px 100px 150px 100px;
+            overflow: hidden;
+        }
+
+        nav {
+            background-color: rgb(129, 93, 93);
+            color: rgb(231, 238, 238);
+            /* width: 100%; */
+            /* height: 40px; */
+            text-align: center;
+            align-items: center;
+            display: flex;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 10px;
+            justify-content: space-around;
+        }
+
+        a {
+            /* padding-left: 30px; */
+            /* display: flex; 
+            flex-direction: row;
+            gap: 5px; */
+            text-decoration: none;
+            color: white;
+        }
+
+        .myLogo {
+          display: flex;
+          justify-content: space-around;
+            /* text-decoration: none; */
+            /* color: white; */
+
+
+        }
+
+        .feature {
+
+            /* width: 300px;
+            height: 200px; */
+            display: flex;
+            margin: auto;
+            justify-content: space-around;
+            gap: 10px;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+
+        h3 {
+            width: 300px;
+            height: 50px;
+            /* border: 1px solid black; */
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: aquamarine;
+
+
+
+        }
+
+        .box1 {
+            width: 2000px;
+            background-color: beige;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 30px;
+            border-radius: 10px;
+            ;
+
+        }
+
+        .box3 {
+            width: 65%;
+            border: 1px solid black;
+            background-color: blue;
+            padding: 20px;
+            color: white;
+        }
+
+        .box2 {
+            width: 2000px;
+            border: 1px solid black;
+            background-color: rgb(168, 168, 110);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+
+        .container {
+            display: flex;
+            /* flex-direction: row; */
+            gap: 5px;
+            /* padding: 20px; */
+            /* background-color: blueviolet; */
+        }
+
+        button {
+            background-color: blue;
+            padding: 5px;
+            margin: 10px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>CSS Utility Simulator</h2>
+    <p>Change the inputs below to see how atomic classes combine to build Uls </p>
+    <nav>
+        <h2>MyLogo</h2>
+        <div class="myLogo">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+        </div>
+    </nav>
+    <div class="feature">
+        <h3>Feature1</h3>
+        <h3>Feature2</h3>
+        <h3>Feature3</h3>
+    </div>
+
+    <div class="container">
+
+        <section class="box1">
+
+            <h2>Utility Controls</h2>
+            <label for="space">Padding(Spacing)</label>
+            <select name="space" id="space">
+                <option>Medium(p-8)</option>
+            </select>
+
+            <label for="color">Background Theme(Colors)</label>
+            <select name="color" id="color">
+                <option>Primary Blue</option>
+            </select>
+
+            <label for="typo">Text Size(Typography)</label>
+            <select name="typo" id="typo">
+                <option>Large(text-xl)</option>
+            </select>
+
+            <label for="border">Corner Radius(Borders)</label>
+            <select name="border" id="border">
+                <option>Square(rounded-none)</option>
+            </select>
+
+            <label for="Depth">Medium (shadow-mid)</label>
+            <select name="space" id="space">
+                <option>Medium(p-8)</option>
+            </select>
+        </section>
+
+        <section class="box2">
+            <div class="box3">
+                <h2>Alex Walker</h2>
+                <p>Full-Stack WEb Developer building awesome things with Tailwind CSS.</p>
+
+            </div>
+
+        </section>
+    </div>
+    <button>Submit</button>
+    <button>Hover Me Slowly!</button>
+</body>
+
+</html>

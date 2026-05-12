@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        .container {
+            border: 1px solid wheat;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 160px;
+            height: 300px;
+            border-radius: 10px;
+            /* margin: auto;
+            padding-top: 90px;
+            margin-top: 100px;
+            padding-left: 10px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr); */
+            margin: auto;
+            margin-top: 200px;
+            padding-top: 40px;
+            padding-left: 5px;
+
+
+        }
+
+        button {
+            border: 1px solid navajowhite;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            margin: 4px 2px;
+
+
+        }
+
+        #output {
+            text-align: right;
+            width: 150px;
+            border: none;
+        }
+
+        #color {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <input type="text" id="output" name="output" value="0"></input>
+        <div>
+            <button onclick="allClear()" style="color: red;">C</button>
+            <button onclick="deleteLast('⌫')" style="color: red;">⌫</button>
+            <button onclick="addValue('%')" id="color">%</button>
+            <button onclick="addValue('/')" style="color: red;">/</button>
+
+            <button onclick="addValue(7)" id="color">7</button>
+            <button onclick="addValue(8)" id="color">8</button>
+            <button onclick="addValue(9)" id="color">9</button>
+            <button onclick="addValue('*')" style="color: red;">*</button>
+
+            <button onclick="addValue(4)" id="color">4</button>
+            <button onclick="addValue(5)" id="color">5</button>
+            <button onclick="addValue(6)" id="color">6</button>
+            <button onclick="addValue('-')" style="color: red;">-</button>
+
+            <button onclick="addValue(1)" id="color">1</button>
+            <button onclick="addValue(2)" id="color">2</button>
+            <button onclick="addValue(3)" id="color">3</button>
+            <button onclick="addValue('+')" style="color: red;">+</button>
+
+            <button onclick="addValue('(')" id="color">(</button>
+            <button onclick="addValue(')')" id="color">)</button>
+            <button onclick="addValue(0)" id="color">0</button>
+            <button onclick="addValue('.')" id="color">.</button>
+            <button onclick="showAnswer('=')" style="background-color: brown;">=</button>
+        </div>
+    </div>
+    <script>
+        let answer = document.getElementById("output");
+        function addValue(value) {
+            if (answer.value==='0'){
+            answer.value=value;
+        }
+        else{
+            answer.value += value;
+        }
+    }
+        function allClear() {
+            answer.value ="0";
+        }
+        function deleteLast(value) {
+         answer.value = answer.value.slice(0, -1) || "0"; 
+        }
+        
+        function showAnswer(value) {
+            answer.value = eval(answer.value);
+        }
+    </script>
+</body>
+
+</html>

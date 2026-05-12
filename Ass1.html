@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            padding-left: 50px;
+
+        }
+
+        .card {
+            border: 1px solid;
+            border-radius: 10px;
+
+
+            width: 200px;
+            height: 150px;
+            padding-left: 20px;
+            box-shadow: 0 2px 5px;
+        }
+
+        .container {
+
+            display: flex;
+            border: 1px solid;
+            border-radius: 10px;
+            max-width: 50%;
+            margin: auto;
+            gap: 80px;
+            padding: 10px;
+            box-shadow: 0 2px 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <section class="form">
+            <h2>Update Variables</h2>
+            <label for="name">Name(String):</label>
+
+            <input type="text" id="name" value="Alex" oninput="updateCard()"></input>
+
+
+            <label for="age">Age(Number):</label>
+
+            <input type="number" id="age" value="26" oninput="updateCard()"></input>
+
+            <label for="VIP">VIP Status(Boolean):</label>
+
+            <input type="checkbox" id="VIP" onchange="updateCard()"></input>
+
+            <label for="cardcolor">Card Color:</label>
+
+            <input type="color" id="cardcolor" value="white" oninput="updateCard()"></input>
+        </section>
+        <section>
+            <h2>Live DOM Output</h2>
+            <div class="card" id="cardResult">
+                <p id="sampleoutput"></p>
+                <p id="outname"></p>
+                <p id="outage"></p>
+            </div>
+        </section>
+    </div>
+    <script>
+        function updateCard() {
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let VIP = document.getElementById("VIP").checked;
+            let cardcolor = document.getElementById("cardcolor").value;
+            let sampleoutput = document.getElementById("sampleoutput");
+            let outname = document.getElementById("outname");
+            let outage = document.getElementById("outage");
+            let cardResult = document.getElementById("cardResult");
+            outname.innerHTML = name;
+            outage.innerHTML = "Age:" + age;
+            cardResult.style.backgroundColor = cardcolor;
+            if (VIP) {
+                sampleoutput.innerHTML = "<p style='border:1px solid;border-radius:10px;background-color:yellow;width:100px;'>VIP member</p>";
+            }
+            else {
+                sampleoutput.innerHTML = "";
+            }
+        }
+    </script>
+</body>
+
+</html>
