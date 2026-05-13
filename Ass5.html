@@ -82,13 +82,29 @@
             <button onclick="addValue('(')" id="color">(</button>
             <button onclick="addValue(')')" id="color">)</button>
             <button onclick="addValue(0)" id="color">0</button>
-            <button onclick="addValue('.')" id="color">.</button>
+            <button onclick="addDot()" id="color">.</button>
             <button onclick="showAnswer('=')" style="background-color: brown;">=</button>
         </div>
     </div>
     <script>
         let answer = document.getElementById("output");
         function addValue(value) {
+            let last=answer.value.slice(-1);
+            let operators=['+','-','*','/','%','.'];
+            if (operators.includes(last)&& operators.includes(value)){
+                return;
+            }
+            // if (value === '.') {
+            //     let parts = answer.value.split(/[\+\-\*\/\%\(\)]/);
+            //     let lastPart = parts[parts.length - 1];
+            //     if (lastPart.includes('.')) {
+            //         return;
+            //     }
+            // }
+
+
+            
+            //answer.value += value;
             if (answer.value==='0'){
             answer.value=value;
         }
@@ -104,7 +120,21 @@
         }
         
         function showAnswer(value) {
-            answer.value = eval(answer.value);
+            try {
+                let result = eval(answer.value);
+                if (result === Infinity || result === -Infinity) {
+                    answer.value = "Cannot divide by 0";
+                } else {
+                    answer.value = result;
+                }
+            } catch (e) {
+                answer.value = "Error";
+            }
+        }
+        function addDot(){
+            if (!answer.value.includes('.')) {
+                answer.value += '.';
+            }
         }
     </script>
 </body>
